@@ -63,8 +63,8 @@ const db = {
                 title: "Self-Portrait at 28",
                 meta: "1500 | Oil on panel",
                 desc: "Famous for its Christ-like frontal pose, this portrait asserts the divine nature of the artist's creativity. It is one of the most iconic images in art history.",
-                full: "/images/durer/durerlowqport.jpg",
-                thumb: "/images/durer/durerlowqport.jpg"
+                full: "images/durer/durerlowqport.jpg",
+                thumb: "images/durer/durerlowqport.jpg"
             },
             {
                 title: "Great Piece of Turf",
