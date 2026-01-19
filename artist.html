@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Profile | Ink Archive</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">&uarr;</button>
+
+    <!-- Header is injected by JS automatically -->
+    
+    <!-- Image Viewer Overlay -->
+    <div id="imageViewer" class="viewer-overlay">
+        <div class="viewer-loader">Loading...</div>
+        <button class="viewer-close" id="closeViewer">&times;</button>
+        <div class="viewer-container"><img src="" class="viewer-img" id="viewerImg"></div>
+        <div id="viewerInfo" class="viewer-info-bar">
+            <div class="info-title" id="vTitle"></div>
+            <div class="info-meta" id="vMeta"></div>
+            <div class="info-desc" id="vDesc"></div>
+        </div>
+        <button id="toggleInfo" class="info-toggle">i</button>
+        <div class="viewer-controls">
+            <button class="ctrl-btn" id="zoomOut">-</button>
+            <button class="ctrl-btn" id="resetZoom">R</button>
+            <button class="ctrl-btn" id="zoomIn">+</button>
+        </div>
+    </div>
+
+    <!-- Main Content (Empty Containers) -->
+    <main class="profile-main">
+        <div class="hero" id="artist-hero">
+            <h2 id="artist-name">Loading...</h2>
+            <span class="hero-dates" id="artist-dates"></span>
+            <div class="hero-tags" id="artist-tags"></div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Biography</h3>
+            <div class="text-content" id="artist-bio"></div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Famous Works</h3>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Javascript will put images here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <h2>Appearance</h2>
+        <div class="setting-group">
+            <label>Theme</label>
+            <div class="btn-group">
+                <button class="btn-option" onclick="setTheme('light')">Light</button>
+                <button class="btn-option" onclick="setTheme('dark')">Dark</button>
+                <button class="btn-option" onclick="setTheme('amoled')">AMOLED</button>
+            </div>
+        </div>
+        <div class="setting-group">
+            <label>Menu Position</label>
+            <div class="btn-group">
+                <button class="btn-option" onclick="setMenuPos('left')">Left</button>
+                <button class="btn-option" onclick="setMenuPos('right')">Right</button>
+            </div>
+        </div>
+        <button class="close-modal" id="closeSettings">Close</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
