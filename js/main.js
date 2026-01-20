@@ -14,7 +14,7 @@ const db = {
                 title: "Young Hare",
                 meta: "1502 | Watercolor and bodycolor",
                 desc: "A masterpiece of observational art. Dürer likely sketched a wild hare in his workshop, capturing the texture of fur with almost photographic precision.",
-                full: "images/durer/youngharehigh.jpg",
+                full: "images/durer/youngharelow.jpg",
                 thumb: "images/durer/youngharelow.jpg"
             },
             {
