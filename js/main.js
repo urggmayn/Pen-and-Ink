@@ -70,15 +70,15 @@ const db = {
                 title: "Great Piece of Turf",
                 meta: "1503 | Watercolor",
                 desc: "A groundbreaking botanical study. Dürer treats a random patch of meadow with the same dignity and scientific detail as a religious subject.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Albrecht_D%C3%BCrer_-_The_Large_Piece_of_Turf%2C_1503_-_Google_Art_Project.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Albrecht_D%C3%BCrer_-_The_Large_Piece_of_Turf%2C_1503_-_Google_Art_Project.jpg/400px-Albrecht_D%C3%BCrer_-_The_Large_Piece_of_Turf%2C_1503_-_Google_Art_Project.jpg"
+                full: "images/durer/greatturfhigh.jpg",
+                thumb: "images/durer/greatturflow.jpg"
             },
             {
                 title: "The Rhinoceros",
                 meta: "1515 | Woodcut",
                 desc: "Dürer never saw a rhinoceros; he based this on descriptions. Despite anatomical inaccuracies, it remained the standard illustration of the animal for centuries.",
-                full: "images/durer/greatturfhigh.jpg",
-                thumb: "images/durer/greatturflow.jpg"
+                full: "images/durer/rhinohigh.png",
+                thumb: "images/durer/phinolow.png"
             },
             {
                 title: "Portrait of the Artist's Father",
