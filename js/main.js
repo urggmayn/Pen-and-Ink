@@ -14,8 +14,8 @@ const db = {
                 title: "Young Hare",
                 meta: "1502 | Watercolor and bodycolor",
                 desc: "A masterpiece of observational art. Dürer likely sketched a wild hare in his workshop, capturing the texture of fur with almost photographic precision.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/4/44/Albrecht_D%C3%BCrer_-_Hare%2C_1502_-_Google_Art_Project.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Albrecht_D%C3%BCrer_-_Hare%2C_1502_-_Google_Art_Project.jpg/400px-Albrecht_D%C3%BCrer_-_Hare%2C_1502_-_Google_Art_Project.jpg"
+                full: "images/durer/youngharehigh.jpg",
+                thumb: "images/durer/youngharelow.jpg"
             },
             {
                 title: "Praying Hands",
