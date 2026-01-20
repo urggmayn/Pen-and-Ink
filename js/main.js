@@ -56,8 +56,8 @@ const db = {
                 title: "Adam and Eve",
                 meta: "1504 | Engraving",
                 desc: "A study in ideal human proportions based on Vitruvian theory. The animals surrounding the figures symbolize the four humors of the body.",
-                full: "aeehigh.jpg",
-                thumb: "aeelow.jpg"
+                full: "images/durer/aeehigh.jpg",
+                thumb: "images/durer/aeelow.jpg"
             },
             {
                 title: "Self-Portrait at 28",
