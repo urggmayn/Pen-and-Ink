@@ -21,50 +21,50 @@ const db = {
                 title: "Praying Hands",
                 meta: "1508 | Brush and ink on blue paper",
                 desc: "Perhaps Dürer's most famous drawing, originally a preparatory sketch for an altarpiece. It highlights his mastery of form using white heightening on colored paper.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/6/63/Albrecht_D%C3%BCrer_-_Praying_Hands%2C_1508_-_Google_Art_Project.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Albrecht_D%C3%BCrer_-_Praying_Hands%2C_1508_-_Google_Art_Project.jpg/400px-Albrecht_D%C3%BCrer_-_Praying_Hands%2C_1508_-_Google_Art_Project.jpg"
+                full: "images/durer/phandshigh.jpg",
+                thumb: "images/durer/phandslow.jpg"
             },
             {
                 title: "Four Horsemen of the Apocalypse",
                 meta: "1498 | Woodcut",
                 desc: "From the 'Apocalypse' series. It depicts Conquest, War, Famine, and Death riding over the people of the earth, showcasing revolutionary dynamic movement in woodcut.",
-                full: "https://smarthistory.org/wp-content/uploads/2023/07/DP816773-scaled.jpg",
-                thumb: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/four-horsemen-of-the-apocalypse-1498-albrecht-durer.jpg"
+                full: "images/durer/fourhahigh.jpg",
+                thumb: "images/durer/fourhalow.jpg"
             },
             {
                 title: "Knight, Death and the Devil",
                 meta: "1513 | Engraving",
                 desc: "One of the three 'Meisterstiche' (Master Prints). It represents the active life of the Christian soldier who rides past death and temptation without fear.",
-                full: "https://palauantiguitats.com/wp-content/uploads/2017/03/G01553.jpg",
-                thumb: "https://uploads3.wikiart.org/images/albrecht-durer/the-knight-death-and-the-devil-1513.jpg!Large.jpg"
+                full: "images/durer/hddhigh.jpg",
+                thumb: "images/durer/hddlow.jpg"
             },
             {
                 title: "Melencolia I",
                 meta: "1514 | Engraving",
                 desc: "A complex allegorical work depicting the intellectual state of melancholy. It is filled with mathematical objects, tools, and a winged genius in deep contemplation.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/1/18/D%C3%BCrer_Melancholia_I.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/D%C3%BCrer_Melancholia_I.jpg/400px-D%C3%BCrer_Melancholia_I.jpg"
+                full: "images/durer/m1high.jpg",
+                thumb: "images/durer/m1low.jpg"
             },
             {
                 title: "Saint Jerome in His Study",
                 meta: "1514 | Engraving",
                 desc: "This engraving masterfully uses light to create a serene, scholarly atmosphere. It depicts the translator of the Bible working peacefully, guarded by his lion.",
-                full: "https://www.nationalgallery.gr/wp-content/uploads/2022/03/71874_2000_2000.jpg",
-                thumb: "https://www.nationalgallery.gr/wp-content/uploads/2022/03/71874_2000_2000-300x300.jpg"
+                full: "images/durer/sainthigh.jpg",
+                thumb: "images/durer/saintlow.jpg"
             },
             {
                 title: "Adam and Eve",
                 meta: "1504 | Engraving",
                 desc: "A study in ideal human proportions based on Vitruvian theory. The animals surrounding the figures symbolize the four humors of the body.",
-                full: "https://smarthistory.org/wp-content/uploads/2021/10/Durer-scaled.jpeg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Albrecht_D%C3%BCrer%2C_Adam_and_Eve%2C_1504%2C_Engraving.jpg/250px-Albrecht_D%C3%BCrer%2C_Adam_and_Eve%2C_1504%2C_Engraving.jpg"
+                full: "aeehigh.jpg",
+                thumb: "aeelow.jpg"
             },
             {
                 title: "Self-Portrait at 28",
                 meta: "1500 | Oil on panel",
                 desc: "Famous for its Christ-like frontal pose, this portrait asserts the divine nature of the artist's creativity. It is one of the most iconic images in art history.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg/400px-Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg"
+                full: "images/durer/selfphigh.jpg",
+                thumb: "images/durer/selfplow.jpg"
             },
             {
                 title: "Great Piece of Turf",
@@ -77,43 +77,43 @@ const db = {
                 title: "The Rhinoceros",
                 meta: "1515 | Woodcut",
                 desc: "Dürer never saw a rhinoceros; he based this on descriptions. Despite anatomical inaccuracies, it remained the standard illustration of the animal for centuries.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/b/bc/The_Rhinoceros_%28NGA_1964.8.697%29_enhanced.png",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/The_Rhinoceros_%28NGA_1964.8.697%29_enhanced.png/400px-The_Rhinoceros_%28NGA_1964.8.697%29_enhanced.png"
+                full: "images/durer/greatturfhigh.jpg",
+                thumb: "images/durer/greatturflow.jpg"
             },
             {
                 title: "Portrait of the Artist's Father",
                 meta: "1490 | Oil on panel",
                 desc: "Painted before Dürer left for his travels. It depicts Albrecht Dürer the Elder, a goldsmith, holding a rosary, painted with deep respect and realism.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/2/20/Albrecht_D%C3%BCrer_-_Portrait_of_D%C3%BCrer%27s_Father_at_70.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Albrecht_D%C3%BCrer_-_Portrait_of_D%C3%BCrer%27s_Father_at_70.jpg/400px-Albrecht_D%C3%BCrer_-_Portrait_of_D%C3%BCrer%27s_Father_at_70.jpg"
+                full: "images/durer/fatherhigh.jpg",
+                thumb: "images/durer/fatherhigh.jpg"
             },
             {
                 title: "Feast of the Rosary",
                 meta: "1506 | Oil on panel",
                 desc: "Painted in Venice, this work proved to the Italians that Dürer was a master of color, not just printmaking. It shows the Virgin Mary distributing rose garlands.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Albrecht_D%C3%BCrer_-_Feast_of_Rose_Garlands_-_Google_Art_Project.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Albrecht_D%C3%BCrer_-_Feast_of_Rose_Garlands_-_Google_Art_Project.jpg/400px-Albrecht_D%C3%BCrer_-_Feast_of_Rose_Garlands_-_Google_Art_Project.jpg"
+                full: "images/durer/feasthigh.jpg",
+                thumb: "images/durer/feastlow.jpg"
             },
             {
                 title: "Small Passion (Title Page)",
                 meta: "1511 | Woodcut",
                 desc: "The title page of one of Dürer's most popular books. The Small Passion series made his religious imagery accessible to a wider audience through print.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Title_page_of_the_Small_Passion_by_Albrecht_D%C3%BCrer.png",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Title_page_of_the_Small_Passion_by_Albrecht_D%C3%BCrer.png/400px-Title_page_of_the_Small_Passion_by_Albrecht_D%C3%BCrer.png"
+                full: "images/durer/passionhigh.png",
+                thumb: "images/durer/passionlow.jpg"
             },
             {
                 title: "Martyrdom of the Ten Thousand",
                 meta: "1508 | Oil on canvas",
                 desc: "Commissioned by Frederick the Wise, this crowded scene depicts a legendary massacre. Dürer included a self-portrait of himself in the center holding a banner.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Albrecht_D%C3%BCrer_-_Marter_der_zehntausend_Christen_%28Yorck_Project%29.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Albrecht_D%C3%BCrer_-_Marter_der_zehntausend_Christen_%28Yorck_Project%29.jpg/400px-Albrecht_D%C3%BCrer_-_Marter_der_zehntausend_Christen_%28Yorck_Project%29.jpg"
+                full: "images/durer/tenhigh.jpg",
+                thumb: "images/durer/tenhigh.jpg"
             },
             {
                 title: "Portrait of a Venetian Woman",
                 meta: "1505 | Oil on panel",
                 desc: "Painted during his second trip to Italy. The soft modeling of the face and the warmth of the colors show the strong influence of Venetian painters like Bellini.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Albrecht_D%C3%BCrer_089b.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albrecht_D%C3%BCrer_089b.jpg/400px-Albrecht_D%C3%BCrer_089b.jpg"
+                full: "images/durer/womanhigh.jpg",
+                thumb: "images/durer/womanlow.jpg"
             }
         ]
     },
