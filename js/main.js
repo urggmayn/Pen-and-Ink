@@ -63,8 +63,8 @@ const db = {
                 title: "Self-Portrait at 28",
                 meta: "1500 | Oil on panel",
                 desc: "Famous for its Christ-like frontal pose, this portrait asserts the divine nature of the artist's creativity. It is one of the most iconic images in art history.",
-                full: "images/durer/durerlowqport.jpg",
-                thumb: "images/durer/durerlowqport.jpg"
+                full: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg",
+                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg/400px-Albrecht_D%C3%BCrer_-_1500_self-portrait_%28High_resolution_and_detail%29.jpg"
             },
             {
                 title: "Great Piece of Turf",
@@ -332,7 +332,7 @@ function toggleLock(force) {
     els.bod.classList.toggle('noscroll', locked);
 }
 
-// --- ARTIST PAGE LOADER ---
+// --- ARTIST PAGE LOADER (FIXED CLICK HANDLERS) ---
 function loadArtistData() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -354,9 +354,10 @@ function loadArtistData() {
     bioContainer.innerHTML = artist.bio.map(p => `<p>${p}</p>`).join('');
 
     const grid = document.getElementById('gallery-grid');
-    grid.innerHTML = artist.works.map(work => `
+    // FIX: Using index instead of passing data strings prevents syntax errors with quotes
+    grid.innerHTML = artist.works.map((work, index) => `
         <div class="art-item skeleton-loading" 
-             onclick="openViewer('${work.full}', '${work.title.replace(/'/g, "&#39;")}', '${work.meta}', '${work.desc.replace(/'/g, "&#39;")}')">
+             onclick="openViewer(${index})">
             <img src="${work.thumb}" class="art-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton-loading')" alt="${work.title}">
             <div class="mag-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="white"/></svg></div>
             <div class="art-title">${work.title}</div>
@@ -364,12 +365,22 @@ function loadArtistData() {
     `).join('');
 }
 
-// --- IMAGE VIEWER ---
-window.openViewer = function(src, title, meta, desc) {
+// --- IMAGE VIEWER (FIXED TO ACCEPT INDEX) ---
+window.openViewer = function(index) {
     if(!els.viewer) return;
-    document.getElementById('vTitle').textContent = title;
-    document.getElementById('vMeta').textContent = meta;
-    document.getElementById('vDesc').textContent = desc;
+    
+    // Get current artist ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    
+    // Safety check
+    if (!db[id] || !db[id].works[index]) return;
+
+    const work = db[id].works[index];
+
+    document.getElementById('vTitle').textContent = work.title;
+    document.getElementById('vMeta').textContent = work.meta;
+    document.getElementById('vDesc').textContent = work.desc;
     
     els.viewer.classList.add('active');
     els.viewer.classList.add('loading');
@@ -377,8 +388,8 @@ window.openViewer = function(src, title, meta, desc) {
     els.viewerImg.src = "";
     
     const tmp = new Image();
-    tmp.onload = () => { els.viewerImg.src = src; els.viewer.classList.remove('loading'); resetZoomState(); };
-    tmp.src = src;
+    tmp.onload = () => { els.viewerImg.src = work.full; els.viewer.classList.remove('loading'); resetZoomState(); };
+    tmp.src = work.full;
 }
 
 // Viewer Zoom/Pan State
