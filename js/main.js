@@ -78,8 +78,7 @@ const db = {
                 meta: "1515 | Woodcut",
                 desc: "Dürer never saw a rhinoceros; he based this on descriptions. Despite anatomical inaccuracies, it remained the standard illustration of the animal for centuries.",
                 full: "images/durer/rhinohigh.png",
-                // FIX: corrected typo 'phinolow' to 'rhinolow'
-                thumb: "images/durer/rhinolow.png"
+                thumb: "images/durer/phinolow.png" //Do not change this "phinolow" not typo.
             },
             {
                 title: "Portrait of the Artist's Father",
