@@ -131,106 +131,106 @@ const db = {
                 title: "Mona Lisa",
                 meta: "c. 1503–1519 | Oil on poplar wood",
                 desc: "Arguably the most famous painting in the world. Known for Lisa Gherardini's enigmatic smile, the painting showcases Leonardo’s mastery of sfumato.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/500px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+                full: "images/leonardo/lisa.jpg",
+                thumb: "images/leonardo/lisa.jpg"
             },
             {
                 title: "The Last Supper",
                 meta: "c. 1495–1498 | Tempera and oil on plaster",
                 desc: "This massive mural captures the dramatic moment immediately after Jesus announces that one of his disciples will betray him.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/400px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg"
+                full: "images/leonardo/supperh.jpg",
+                thumb: "images/leonardo/supperh.jpg"
             },
             {
                 title: "Vitruvian Man",
                 meta: "c. 1490 | Pen and ink on paper",
                 desc: "Based on the writings of the Roman architect Vitruvius, the sketch depicts a male figure in two superimposed positions inscribed within a circle and a square.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/800px-Da_Vinci_Vitruve_Luc_Viatour.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/400px-Da_Vinci_Vitruve_Luc_Viatour.jpg"
+                full: "images/leonardo/manh.jpg",
+                thumb: "images/leonardo/manh.jpg"
             },
             {
                 title: "Lady with an Ermine",
                 meta: "c. 1489–1491 | Oil on walnut board",
                 desc: "This portrait of Cecilia Gallerani is celebrated for its dynamic composition. She holds a muscular white ermine, a symbol of purity.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Lady_with_an_Ermine_-_Leonardo_da_Vinci_%28adjusted_levels%29.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Lady_with_an_Ermine_-_Leonardo_da_Vinci_%28adjusted_levels%29.jpg/500px-Lady_with_an_Ermine_-_Leonardo_da_Vinci_%28adjusted_levels%29.jpg"
+                full: "images/leonardo/ladyh.jpg",
+                thumb: "images/leonardo/ladyh.jpg"
             },
             {
                 title: "Salvator Mundi",
                 meta: "c. 1500 | Oil on walnut board",
                 desc: "Depicting Christ as the 'Savior of the World,' this painting became the most expensive work of art ever sold at auction ($450.3 million).",
-                full: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Leonardo_da_Vinci%2C_Salvator_Mundi%2C_c.1500%2C_oil_on_walnut%2C_45.4_%C3%97_65.6_cm.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Leonardo_da_Vinci%2C_Salvator_Mundi%2C_c.1500%2C_oil_on_walnut%2C_45.4_%C3%97_65.6_cm.jpg/500px-Leonardo_da_Vinci%2C_Salvator_Mundi%2C_c.1500%2C_oil_on_walnut%2C_45.4_%C3%97_65.6_cm.jpg"
+                full: "images/leonardo/mundih.jpg",
+                thumb: "images/leonardo/mundih.jpg"
             },
             {
                 title: "Virgin of the Rocks",
                 meta: "c. 1483–1486 | Oil on panel",
                 desc: "Shows the Virgin Mary, Christ Child, John the Baptist, and an angel in a mysterious, rocky landscape. Prime example of chiaroscuro.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg/500px-Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg"
+                full: "images/leonardo/rocksh.jpg",
+                thumb: "images/leonardo/rocksh.jpg"
             },
             {
                 title: "Ginevra de' Benci",
                 meta: "c. 1474–1478 | Oil on wood",
                 desc: "The only painting by Leonardo in the Americas. The juniper bush (ginepro) behind her is a visual pun on her name.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/3/39/Leonardo_da_Vinci_-_Ginevra_de%27_Benci_-_Google_Art_Project.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/3/39/Leonardo_da_Vinci_-_Ginevra_de%27_Benci_-_Google_Art_Project.jpg"
+                full: "images/leonardo/benci.jpg",
+                thumb: "images/leonardo/benci.jpg"
             },
             {
                 title: "St. John the Baptist",
                 meta: "c. 1513–1516 | Oil on walnut wood",
                 desc: "Believed to be Leonardo’s final painting. The intense use of sfumato gives the figure a glowing, ethereal quality.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg/500px-Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg"
+                full: "images/leonardo/jhonh.jpg",
+                thumb: "images/leonardo/jhonh.jpg"
             },
             {
                 title: "The Annunciation",
                 meta: "c. 1472–1475 | Oil and tempera on panel",
                 desc: "One of Leonardo’s earliest works. The intricately detailed botanical elements and the bird-like wings of the angel highlight his scientific curiosity.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Annunciation_%28Leonardo_c._1472%E2%80%931476%29.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Annunciation_%28Leonardo_c._1472%E2%80%931476%29.jpg/500px-Annunciation_%28Leonardo_c._1472%E2%80%931476%29.jpg"
+                full: "images/leonardo/annuciation.jpg",
+                thumb: "images/leonardo/annuciation.jpg"
             },
             {
                 title: "Self-Portrait in Red Chalk",
                 meta: "c. 1512 | Red chalk on paper",
                 desc: "Widely accepted as the only surviving self-portrait of Leonardo. It depicts an aged, bearded man with deep lines of wisdom and weariness.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/3/38/Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg/400px-Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg"
+                full: "images/leonardo/selfportrait.jpg",
+                thumb: "images/leonardo/selfportrait.jpg"
             },
             {
                 title: "La Scapigliata",
                 meta: "c. 1508 | Oil, earth, white lead",
                 desc: "Meaning 'The Disheveled Woman,' this unfinished sketch is renowned for the contrast between the serene face and wildly painted hair.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/8/81/Leonardo_da_vinci_-_La_scapigliata.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Lascapigliata.jpg/500px-Lascapigliata.jpg"
+                full: "images/leonardo/lasacpigliata.jpg",
+                thumb: "images/leonardo/lasacpigliata.jpg"
             },
             {
                 title: "Adoration of the Magi",
                 meta: "c. 1481 | Oil on wood (unfinished)",
                 desc: "The unfinished underpainting offers a rare look into Leonardo's process, showing his mastery of perspective and dynamic figure grouping.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/2/29/Adoration_of_the_Magi_%28Leonardo%29.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Adoration_of_the_Magi_%28Leonardo%29.jpg/500px-Adoration_of_the_Magi_%28Leonardo%29.jpg"
+                full: "images/leonardo/magi.jpg",
+                thumb: "images/leonardo/magi.jpg"
             },
             {
                 title: "La Belle Ferronnière",
                 meta: "c. 1490–1496 | Oil on walnut wood",
                 desc: "Named after the ferronnière (an ornament worn on the forehead), this portrait is celebrated for the subject's intense, confrontational gaze.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/4/4d/La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg/500px-La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg"
+                full: "images/leonardo/belle.jpg",
+                thumb: "images/leonardo/belle.jpg"
             },
             {
                 title: "Madonna of the Carnation",
                 meta: "c. 1478–1480 | Oil on panel",
                 desc: "One of his earliest independent works. The background features a beautifully detailed mountain range viewed through a pair of arched windows.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/7/70/Leonardo_da_Vinci_Madonna_of_the_Carnation.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Leonardo_da_Vinci_Madonna_of_the_Carnation.jpg/500px-Leonardo_da_Vinci_Madonna_of_the_Carnation.jpg"
+                full: "images/leonardo/madonna.jpg",
+                thumb: "images/leonardo/madonna.jpg"
             },
             {
                 title: "Portrait of a Musician",
                 meta: "c. 1483–1487 | Oil on walnut wood",
                 desc: "The only known surviving portrait of a male subject by Leonardo. The subject's face is highly detailed and expressive, holding a sheet of music.",
-                full: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Leonardo_da_Vinci_-_Portrait_of_a_Musician_-_Pinacoteca_Ambrosiana.jpg",
-                thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Leonardo_da_Vinci_-_Portrait_of_a_Musician_-_Pinacoteca_Ambrosiana.jpg/500px-Leonardo_da_Vinci_-_Portrait_of_a_Musician_-_Pinacoteca_Ambrosiana.jpg"
+                full: "images/leonardo/musician.jpg",
+                thumb: "images/leonardo/musician.jpg"
             }
         ]
     }
