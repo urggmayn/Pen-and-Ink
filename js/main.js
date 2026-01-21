@@ -1,4 +1,4 @@
-// --- ARTIST DATABASE (ALL CONTENT) ---
+// --- ARTIST DATABASE ---
 const db = {
     "durer": {
         name: "Albrecht Dürer",
@@ -78,7 +78,8 @@ const db = {
                 meta: "1515 | Woodcut",
                 desc: "Dürer never saw a rhinoceros; he based this on descriptions. Despite anatomical inaccuracies, it remained the standard illustration of the animal for centuries.",
                 full: "images/durer/rhinohigh.png",
-                thumb: "images/durer/phinolow.png"
+                // FIX: corrected typo 'phinolow' to 'rhinolow'
+                thumb: "images/durer/rhinolow.png"
             },
             {
                 title: "Portrait of the Artist's Father",
@@ -238,6 +239,9 @@ const db = {
 
 // --- SHARED HEADER INJECTION ---
 function injectHeader() {
+    // FIX: Added the Modal HTML here. 
+    // In the original code, the header injection only included header/nav, 
+    // causing the "Settings" button to fail on pages that didn't already have the modal HTML.
     const headerHTML = `
     <header>
         <button id="hamburger" class="menu-btn menu-left" aria-label="Menu">
@@ -254,7 +258,27 @@ function injectHeader() {
             <button class="settings-trigger" id="openSettings">Settings</button>
         </div>
     </nav>
-    <div id="overlay" class="overlay"></div>`;
+    <div id="overlay" class="overlay"></div>
+    
+    <div id="settingsModal" class="modal">
+        <button class="close-modal" id="closeSettings">× Close</button>
+        <h2>Settings</h2>
+        <div class="setting-group">
+            <label>Theme</label>
+            <div class="btn-group">
+                <button class="btn-option" onclick="setTheme('light')">Light</button>
+                <button class="btn-option" onclick="setTheme('dark')">Dark</button>
+                <button class="btn-option" onclick="setTheme('amoled')">AMOLED</button>
+            </div>
+        </div>
+        <div class="setting-group">
+            <label>Menu Position</label>
+            <div class="btn-group">
+                <button class="btn-option" onclick="setMenuPos('left')">Left</button>
+                <button class="btn-option" onclick="setMenuPos('right')">Right</button>
+            </div>
+        </div>
+    </div>`;
     
     // Only inject if header doesn't exist
     if (!document.querySelector('header')) {
@@ -263,16 +287,8 @@ function injectHeader() {
 }
 
 // --- CORE FUNCTIONS ---
-const els = {
-    bod: document.body,
-    viewer: document.getElementById('imageViewer'),
-    viewerImg: document.getElementById('viewerImg'),
-    closeViewer: document.getElementById('closeViewer'),
-    zoomIn: document.getElementById('zoomIn'),
-    zoomOut: document.getElementById('zoomOut'),
-    resetZoom: document.getElementById('resetZoom'),
-    search: document.getElementById('searchBar')
-};
+// FIX: We declare 'els' here but populate it in 'init' to ensure DOM elements exist
+const els = {}; 
 
 function init() {
     // 1. Inject Header on all pages except Index (Index has custom header)
@@ -280,13 +296,21 @@ function init() {
         injectHeader();
     }
     
-    // 2. Re-select elements after injection
+    // 2. Populate 'els' object (Moving this inside init prevents "element not found" errors on load)
+    els.bod = document.body;
+    els.viewer = document.getElementById('imageViewer');
+    els.viewerImg = document.getElementById('viewerImg');
+    els.closeViewer = document.getElementById('closeViewer');
+    els.zoomIn = document.getElementById('zoomIn');
+    els.zoomOut = document.getElementById('zoomOut');
+    els.resetZoom = document.getElementById('resetZoom');
+    els.search = document.getElementById('searchBar');
     els.ham = document.getElementById('hamburger');
     els.bar = document.getElementById('sidebar');
     els.ovl = document.getElementById('overlay');
     els.mod = document.getElementById('settingsModal');
     
-    // 3. Bind Events
+    // 3. Bind Events (Check if elements exist first)
     if(els.ham) els.ham.addEventListener('click', toggleMenu);
     if(els.ovl) els.ovl.addEventListener('click', closeAll);
     if(document.getElementById('openSettings')) document.getElementById('openSettings').addEventListener('click', openSettings);
@@ -305,34 +329,39 @@ function init() {
 
 // --- NAVIGATION & MODALS ---
 function toggleMenu() {
-    els.bar.classList.toggle('open');
-    els.ovl.classList.toggle('active');
+    if(els.bar) els.bar.classList.toggle('open');
+    if(els.ovl) els.ovl.classList.toggle('active');
     toggleLock();
 }
 
 function openSettings() {
-    els.bar.classList.remove('open');
-    els.mod.classList.add('active');
-    els.ovl.classList.add('active');
-    els.ovl.classList.add('modal-mode');
+    if(els.bar) els.bar.classList.remove('open');
+    if(els.mod) els.mod.classList.add('active');
+    if(els.ovl) {
+        els.ovl.classList.add('active');
+        els.ovl.classList.add('modal-mode');
+    }
     toggleLock(true);
 }
 
 function closeAll() {
     if(els.bar) els.bar.classList.remove('open');
     if(els.mod) els.mod.classList.remove('active');
-    if(els.ovl) els.ovl.classList.remove('active');
-    if(els.ovl) els.ovl.classList.remove('modal-mode');
+    if(els.ovl) {
+        els.ovl.classList.remove('active');
+        els.ovl.classList.remove('modal-mode');
+    }
     if(els.viewer) els.viewer.classList.remove('active');
     toggleLock(false);
 }
 
 function toggleLock(force) {
+    // FIX: logic to only lock if force is true OR overlay/viewer is active
     const locked = force || (els.ovl && els.ovl.classList.contains('active')) || (els.viewer && els.viewer.classList.contains('active'));
-    els.bod.classList.toggle('noscroll', locked);
+    if(els.bod) els.bod.classList.toggle('noscroll', locked);
 }
 
-// --- ARTIST PAGE LOADER (FIXED CLICK HANDLERS) ---
+// --- ARTIST PAGE LOADER ---
 function loadArtistData() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -354,7 +383,6 @@ function loadArtistData() {
     bioContainer.innerHTML = artist.bio.map(p => `<p>${p}</p>`).join('');
 
     const grid = document.getElementById('gallery-grid');
-    // FIX: Using index instead of passing data strings prevents syntax errors with quotes
     grid.innerHTML = artist.works.map((work, index) => `
         <div class="art-item skeleton-loading" 
              onclick="openViewer(${index})">
@@ -365,15 +393,14 @@ function loadArtistData() {
     `).join('');
 }
 
-// --- IMAGE VIEWER (FIXED TO ACCEPT INDEX) ---
+// --- IMAGE VIEWER ---
 window.openViewer = function(index) {
     if(!els.viewer) return;
     
-    // Get current artist ID from URL
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
     
-    // Safety check
+    // FIX: Added safety check for valid ID
     if (!db[id] || !db[id].works[index]) return;
 
     const work = db[id].works[index];
@@ -398,21 +425,58 @@ let vState = { scale: 1, x: 0, y: 0, sx: 0, sy: 0, panning: false };
 function updateView() { els.viewerImg.style.transform = `translate(${vState.x}px, ${vState.y}px) scale(${vState.scale})`; }
 function resetZoomState() { vState = { scale: 1, x: 0, y: 0, sx: 0, sy: 0, panning: false }; updateView(); }
 
-if(els.zoomIn) {
-    els.zoomIn.addEventListener('click', () => { vState.scale += 0.5; updateView(); });
-    els.zoomOut.addEventListener('click', () => { if(vState.scale > 0.6) { vState.scale -= 0.5; updateView(); } });
-    els.resetZoom.addEventListener('click', resetZoomState);
-    
-    const onDown = (e) => { if(vState.scale > 1) { vState.panning = true; vState.sx = (e.touches?e.touches[0].clientX:e.clientX) - vState.x; vState.sy = (e.touches?e.touches[0].clientY:e.clientY) - vState.y; els.viewerImg.style.transition='none'; }};
-    const onMove = (e) => { if(vState.panning) { e.preventDefault(); vState.x = (e.touches?e.touches[0].clientX:e.clientX) - vState.sx; vState.y = (e.touches?e.touches[0].clientY:e.clientY) - vState.sy; updateView(); }};
-    const onUp = () => { vState.panning = false; els.viewerImg.style.transition='transform 0.1s'; };
+// Fix for zoom controls (Event listener accumulation was safe due to being inside if check, but ensuring DOM readiness is key)
+document.addEventListener('DOMContentLoaded', () => {
+    // Zoom listeners setup is now deferred to init() logic implicitly or handled here if elements exist
+    // However, since 'els' is populated in init(), we need to attach listeners *after* init runs or inside init.
+    // The previous logic attached them if elements existed.
+});
 
-    els.viewerImg.addEventListener('mousedown', onDown);
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('mouseup', onUp);
-    els.viewerImg.addEventListener('touchstart', onDown);
-    window.addEventListener('touchmove', onMove, { passive: false });
-    window.addEventListener('touchend', onUp);
+// Re-attaching logic inside init would be cleaner, but the current structure has them inline.
+// We rely on init() running on DOMContentLoaded to populate 'els', then we need to bind these:
+
+// FIX: Moved the zoom binding logic into a safe function called by init
+function bindViewerEvents() {
+    if(els.zoomIn) {
+        els.zoomIn.onclick = () => { vState.scale += 0.5; updateView(); };
+        els.zoomOut.onclick = () => { if(vState.scale > 0.6) { vState.scale -= 0.5; updateView(); } };
+        els.resetZoom.onclick = resetZoomState;
+        
+        const onDown = (e) => { 
+            if(vState.scale > 1) { 
+                vState.panning = true; 
+                vState.sx = (e.touches?e.touches[0].clientX:e.clientX) - vState.x; 
+                vState.sy = (e.touches?e.touches[0].clientY:e.clientY) - vState.y; 
+                els.viewerImg.style.transition='none'; 
+            }
+        };
+        const onMove = (e) => { 
+            if(vState.panning) { 
+                // FIX: preventDefault is crucial for touch events to stop scrolling
+                if(e.cancelable) e.preventDefault(); 
+                vState.x = (e.touches?e.touches[0].clientX:e.clientX) - vState.sx; 
+                vState.y = (e.touches?e.touches[0].clientY:e.clientY) - vState.sy; 
+                updateView(); 
+            }
+        };
+        const onUp = () => { vState.panning = false; els.viewerImg.style.transition='transform 0.1s'; };
+    
+        els.viewerImg.addEventListener('mousedown', onDown);
+        window.addEventListener('mousemove', onMove);
+        window.addEventListener('mouseup', onUp);
+        
+        els.viewerImg.addEventListener('touchstart', onDown);
+        // FIX: Added passive: false to allow preventDefault
+        window.addEventListener('touchmove', onMove, { passive: false });
+        window.addEventListener('touchend', onUp);
+    }
+}
+
+// Hook bindViewerEvents into init
+const originalInit = init;
+init = function() {
+    originalInit();
+    bindViewerEvents();
 }
 
 // Viewer Info Toggle
@@ -420,9 +484,10 @@ const infoBtn = document.getElementById('toggleInfo');
 if(infoBtn) infoBtn.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('viewerInfo').classList.toggle('active'); });
 
 // --- INDEX SEARCH ---
-if(els.search) {
+if(document.getElementById('searchBar')) {
     window.filterMasters = function(category) {
-        els.search.value = '';
+        const search = document.getElementById('searchBar');
+        if(search) search.value = '';
         const cards = document.querySelectorAll('.card');
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.getAttribute('onclick').includes(category)));
 
@@ -432,7 +497,7 @@ if(els.search) {
         });
     };
 
-    els.search.addEventListener('input', (e) => {
+    document.getElementById('searchBar').addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.getAttribute('onclick').includes("'all'")));
@@ -456,6 +521,7 @@ if(backBtn) {
 window.setTheme = (t) => { document.documentElement.setAttribute('data-theme', t); localStorage.setItem('theme', t); updateUI(); };
 window.setMenuPos = (p) => { 
     if(els.ham) els.ham.className = `menu-btn menu-${p}`;
+    // FIX: Using CSS classes purely for animation state, direction is handled by specific classes
     if(els.bar) els.bar.className = `sidebar ${p==='right'?'from-right':''}`;
     localStorage.setItem('menuPos', p); 
     updateUI(); 
@@ -464,7 +530,7 @@ function updateUI() {
     const t = localStorage.getItem('theme')||'light', p = localStorage.getItem('menuPos')||'left';
     document.querySelectorAll('.btn-option').forEach(b => {
         const o = b.getAttribute('onclick');
-        b.classList.toggle('active', o.includes(t) || o.includes(p));
+        if(o) b.classList.toggle('active', o.includes(t) || o.includes(p));
     });
 }
 
