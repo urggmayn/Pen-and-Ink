@@ -85,7 +85,7 @@ const db = {
                 meta: "1490 | Oil on panel",
                 desc: "Painted before Dürer left for his travels. It depicts Albrecht Dürer the Elder, a goldsmith, holding a rosary, painted with deep respect and realism.",
                 full: "images/durer/fatherhigh.jpg",
-                thumb: "images/durer/fatherhigh.jpg"
+                thumb: "images/durer/fatherlow.jpg"
             },
             {
                 title: "Feast of the Rosary",
