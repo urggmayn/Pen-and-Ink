@@ -56,15 +56,20 @@ h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; text-transform: u
     text-decoration: none; color: var(--text-color);
     font-weight: bold; font-size: 0.9rem; border: 1px solid var(--border-color);
     padding: 4px 10px; border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .menu-btn {
     position: absolute; top: 10px; padding: 10px;
     cursor: pointer; background: none; border: none;
     display: flex; flex-direction: column; gap: 5px;
+    z-index: 1001;
 }
 .menu-left { left: 10px; }
 .menu-right { right: 10px; }
+
+/* FIX: If menu is on the right, move back button to the left to avoid overlap */
+.menu-right ~ .back-btn { right: auto; left: 10px; }
 
 .bar { width: 25px; height: 3px; background-color: var(--text-color); border-radius: 2px; transition: 0.3s; }
 
@@ -82,7 +87,7 @@ h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; text-transform: u
 }
 
 .sidebar.open { transform: translateX(0); }
-.sidebar.from-right { right: 0; border-right: none; border-left: 1px solid var(--border-color); transform: translateX(100%); }
+.sidebar.from-right { right: 0; left: auto; border-right: none; border-left: 1px solid var(--border-color); transform: translateX(100%); }
 .sidebar.from-right.open { transform: translateX(0); }
 
 .nav-links { list-style: none; flex-grow: 1; }
